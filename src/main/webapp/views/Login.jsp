@@ -128,17 +128,24 @@
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form>
-        <h3><i class="fas fa-car"></i></h3>
-
-        <label for="username">Username</label>
-        <input type="text" placeholder="Email or Phone" id="username">
-
-        <label for="password">Password</label>
-        <input type="password" placeholder="Password" id="password">
-
-        <button>Log In</button>
-
+ <form action="/login" method="POST">
+        <div>
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="motDePass">Mot de passe :</label>
+            <input type="password" id="motDePass" name="motDePass" required>
+        </div>
+        <button type="submit">Se connecter</button>
     </form>
+
+    <!-- Affiche un message d'erreur si la connexion échoue -->
+    <p style="color: red;">
+        <% if (request.getAttribute("error") != null) { %>
+            <%= request.getAttribute("error") %>
+        <% } %>
+    </p>
+
 </body>
 </html>

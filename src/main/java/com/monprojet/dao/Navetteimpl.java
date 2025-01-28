@@ -16,7 +16,6 @@ public class Navetteimpl implements NavetteDAO {
 
     @Override
     public void ajouterNavette(Navette navette) {
-        String query = "INSERT INTO navettes (id, ville_depart, ville_arrivee, heure_depart, heure_arrivee, description) VALUES (?, ?, ?, ?, ?, ?)";
         database.insert("navettes", navette.getId(), navette.getVilleDepart(), navette.getVilleArrivee(), navette.getHeureDepart(), navette.getHeureArrivee(), navette.getDescription());
     }
 

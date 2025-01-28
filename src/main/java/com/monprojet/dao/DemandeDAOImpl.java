@@ -17,7 +17,6 @@ public class DemandeDAOImpl implements DemandeDAO {
 
     @Override
     public void ajouterDemande(Demande demande) {
-        String query = "INSERT INTO demandes (ville_depart, ville_arrivee, heure_depart, heure_arrivee, periode_debut, periode_fin) VALUES (?, ?, ?, ?, ?, ?)";
         database.insert("demandes", demande.getVilleDepart(), demande.getVilleArrivee(), demande.getHeureDepart(), 
                         demande.getHeureArrivee(), demande.getPeriodeDebut(), demande.getPeriodeFin());
     }

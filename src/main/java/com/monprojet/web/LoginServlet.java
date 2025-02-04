@@ -22,18 +22,19 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        System.out.println("Authentification de l'utilisateur : " + username + " avec le mot de passe : " + password);
+        String email = request.getParameter("email");
+        String motDePass = request.getParameter("motDePass");
+        System.out.println("Authentification de l'utilisateur : " + email + " avec le mot de passe : " + motDePass);
 
         // Vérification de l'authentification via AuthService
-        boolean isAuthenticated = authService.authenticate(username, password);
+        boolean isAuthenticated = authService.authenticate(email, motDePass);
 
         if (isAuthenticated) {
             // Créer une session utilisateur et rediriger vers la page d'accueil
             HttpSession session = request.getSession();
-            session.setAttribute("username", username);
-            response.sendRedirect("views/home.jsp"); // Redirection vers home.jsp dans /views
+            session.setAttribute("email", email);
+            System.out.println("Context Path: " + request.getContextPath());
+            response.sendRedirect(request.getContextPath() + "/views/home.jsp"); // Redirection vers home.jsp dans /views
         } else {
             // Redirection vers la page de connexion avec un message d'erreur
             response.sendRedirect("views/login.jsp?error=Invalid Credentials");
@@ -43,7 +44,7 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Redirection vers login.jsp dans le dossier /views
-        RequestDispatcher dispatcher = request.getRequestDispatcher("views/login.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
         dispatcher.forward(request, response);
     }
 }

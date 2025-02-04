@@ -22,7 +22,7 @@ public class Navetteimpl implements NavetteDAO {
     @Override
     public Navette trouverNavetteParId(int id) {
         String query = "SELECT * FROM navettes WHERE id = ?";
-        String[][] result = database.select("navettes", "id", id);
+        String[][] result = database.Select("navettes", "id", id);
         
         if (result != null && result.length > 1) {
             String[] row = result[1];
@@ -42,7 +42,7 @@ public class Navetteimpl implements NavetteDAO {
     @Override
     public List<Navette> listerNavettes() {
         List<Navette> navettes = new ArrayList<>();
-        String[][] result = database.select("navettes");
+        String[][] result = database.Select("navettes");
         
         if (result != null && result.length > 1) {
             for (int i = 1; i < result.length; i++) {

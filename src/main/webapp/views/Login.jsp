@@ -128,24 +128,15 @@
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
- <form action="/login" method="POST">
-        <div>
-            <label for="email">Email :</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div>
-            <label for="motDePass">Mot de passe :</label>
-            <input type="password" id="motDePass" name="motDePass" required>
-        </div>
-        <button type="submit">Se connecter</button>
-    </form>
+ <form action="login" method="post">
+     <label for="email">Username</label>
+    <input type="text" id="email" name="email" required>
 
-    <!-- Affiche un message d'erreur si la connexion échoue -->
-    <p style="color: red;">
-        <% if (request.getAttribute("error") != null) { %>
-            <%= request.getAttribute("error") %>
-        <% } %>
-    </p>
+    <label for="password">Password</label>
+    <input type="password" id="motDePass" name="motDePass" required>
+
+    <button type="submit">Log In</button>
+</form>
 
 </body>
 </html>

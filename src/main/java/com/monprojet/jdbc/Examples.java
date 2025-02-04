@@ -5,7 +5,7 @@ public class Examples {
 	void exp01() {
 		DataSource ds = new MySqlDataSource("Transportapp");
 		Database db = new Database(ds);
-		String[][] data = db.select("utilisateur");
+		String[][] data = db.Select("utilisateur");
 		print(data, 2);
 	}
 	
@@ -13,7 +13,7 @@ public class Examples {
 		// R�cup�rer les livres publi�s par l'�diteur N� 469
 		DataSource ds = new MySqlDataSource("Biblio");
 		Database db = new Database(ds);
-		String[][] data = db.select("Titles", "Publisher_ID", 469);
+		String[][] data = db.Select("Titles", "Publisher_ID", 469);
 		print(data, data.length);
 	}
 	

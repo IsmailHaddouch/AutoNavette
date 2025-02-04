@@ -12,11 +12,11 @@ public class AuthService {
         this.database = database;
     }
 
-    public boolean authenticate(String username, String password) {
-        System.out.println(username +" " + password);
+    public boolean authenticate(String email, String motDePasse) {
+        System.out.println(email +" " + motDePasse);
 
-        String query = "SELECT * FROM users WHERE username = '" + username + "' AND password = '" + password + "'";
-        String[][] result = database.executeQuery(query);
+        String query = "SELECT * FROM utilisateur WHERE email = '" + email + "' AND motDePasse = '" + motDePasse + "'";
+        String[][] result = database.ExecuteQuery(query);
 
         if (result != null && result.length > 1) {
             return true;

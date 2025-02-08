@@ -24,7 +24,7 @@ public class DemandeDAOImpl implements DemandeDAO {
     @Override
     public Demande trouverDemandeParId(int id) {
         String query = "SELECT * FROM demandes WHERE id = ?";
-        String[][] result = database.select("demandes", "id", id);
+        String[][] result = database.Select("demandes", "id", id);
         
         if (result != null && result.length > 1) {
             String[] row = result[1];
@@ -44,7 +44,7 @@ public class DemandeDAOImpl implements DemandeDAO {
     @Override
     public List<Demande> listerDemandes() {
         List<Demande> demandes = new ArrayList<>();
-        String[][] result = database.select("demandes");
+        String[][] result = database.Select("demandes");
         
         if (result != null && result.length > 1) {
             for (int i = 1; i < result.length; i++) {

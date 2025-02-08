@@ -10,7 +10,7 @@
     <style>
       *,
       *:before,
-      *:after {ç
+      *:after {
           padding: 0;
           margin: 0;
           box-sizing: border-box;
@@ -121,6 +121,16 @@
       .social i {
           margin-right: 4px;
       }
+      
+      /* Ajout d'une section pour l'icône */
+      .icon-container {
+          text-align: center;
+          margin-bottom: 20px;
+      }
+      .icon-container i {
+          font-size: 50px;
+          color: #ffffff;
+      }
     </style>
 </head>
 <body>
@@ -128,15 +138,19 @@
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
- <form action="login" method="post">
-     <label for="email">Username</label>
-    <input type="text" id="email" name="email" required>
+    <form action="login" method="post">
+        <!-- Icône professionnelle en rapport avec AutoNavette -->
+        <div class="icon-container">
+            <i class="fas fa-bus"></i>
+        </div>
+        
+        <label for="email">Username</label>
+        <input type="text" id="email" name="email" required>
 
-    <label for="password">Password</label>
-    <input type="password" id="motDePass" name="motDePass" required>
+        <label for="password">Password</label>
+        <input type="password" id="motDePass" name="motDePass" required>
 
-    <button type="submit">Log In</button>
-</form>
-
+        <button type="submit">Log In</button>
+    </form>
 </body>
 </html>

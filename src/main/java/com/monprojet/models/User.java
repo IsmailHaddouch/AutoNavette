@@ -6,13 +6,15 @@ public class User {
     private String nom;
     private String email;
     private String motDePasse;
+    private String typeUser ;
 
     // Constructeur
-    public User(int id, String nom, String email, String motDePasse) {
+    public User(int id, String nom, String email, String motDePasse, String typeUser) {
         this.id = id;
         this.nom = nom;
         this.email = email;
         this.motDePasse = motDePasse;
+        this.typeUser = typeUser;
     }
 
     // Getters et Setters
@@ -46,5 +48,12 @@ public class User {
 
     public void setMotDePasse(String motDePasse) {
         this.motDePasse = motDePasse;
+    }
+    public String gettypeUser() {
+        return typeUser;
+    }
+
+    public void settypeUser(String typeUser) {
+        this.typeUser = typeUser;
     }
 }

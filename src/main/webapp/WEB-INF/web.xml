@@ -3,7 +3,7 @@
   <display-name>LoginProject</display-name>
   <servlet>
         <servlet-name>loginServlet</servlet-name>
-        <servlet-class>com.monprojet.web.LoginServlet</servlet-class>
+        <servlet-class>com.monprojet.controller.LoginServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>

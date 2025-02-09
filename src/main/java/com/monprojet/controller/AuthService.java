@@ -1,4 +1,4 @@
-package com.monprojet.web;
+package com.monprojet.controller;
 
 
 import com.monprojet.jdbc.Database;
@@ -12,10 +12,10 @@ public class AuthService {
         this.database = database;
     }
 
-    public boolean authenticate(String email, String motDePasse) {
-        System.out.println(email +" " + motDePasse);
+    public boolean authenticate(String username, String motDePass) {
+        System.out.println(username +" " + motDePass);
 
-        String query = "SELECT * FROM utilisateur WHERE email = '" + email + "' AND motDePasse = '" + motDePasse + "'";
+        String query = "SELECT * FROM utilisateur WHERE username = '" + username + "' AND motDePass = '" + motDePass + "'";
         String[][] result = database.ExecuteQuery(query);
 
         if (result != null && result.length > 1) {

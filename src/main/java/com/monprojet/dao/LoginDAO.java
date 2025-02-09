@@ -18,15 +18,15 @@ public class LoginDAO {
     }
 
     // Méthode pour vérifier l'authentification d'un utilisateur
-    public boolean checkLogin(String email, String motDePass) {
+    public boolean checkLogin(String username, String motDePass) {
         // Requête SQL avec des paramètres
-        String sql = "SELECT * FROM users WHERE email = ? AND motDePass = ?";
+        String sql = "SELECT * FROM users WHERE username = ? AND motDePass = ?";
 
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             
             // Remplacer les paramètres dans la requête
-            preparedStatement.setString(1, email);
+            preparedStatement.setString(1, username);
             preparedStatement.setString(2, motDePass);
 
             // Exécution de la requête

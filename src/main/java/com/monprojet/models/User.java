@@ -3,19 +3,10 @@ package com.monprojet.models;
 
 public class User {
     private int id;
-    private String nom;
-    private String email;
-    private String motDePasse;
+    private String username;
+    private String motDePass;
     private String typeUser ;
 
-    // Constructeur
-    public User(int id, String nom, String email, String motDePasse, String typeUser) {
-        this.id = id;
-        this.nom = nom;
-        this.email = email;
-        this.motDePasse = motDePasse;
-        this.typeUser = typeUser;
-    }
 
     // Getters et Setters
     public int getId() {
@@ -26,34 +17,28 @@ public class User {
         this.id = id;
     }
 
-    public String getNom() {
-        return nom;
+
+
+    public String getUsername() {
+        return username;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getEmail() {
-        return email;
+    public String getMotDePass() {
+        return motDePass;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setMotDePasse(String motDePass) {
+        this.motDePass = motDePass;
     }
-
-    public String getMotDePasse() {
-        return motDePasse;
-    }
-
-    public void setMotDePasse(String motDePasse) {
-        this.motDePasse = motDePasse;
-    }
-    public String gettypeUser() {
+    public String getTypeUser() {
         return typeUser;
     }
 
-    public void settypeUser(String typeUser) {
+    public void setTypeUser(String typeUser) {
         this.typeUser = typeUser;
     }
 }

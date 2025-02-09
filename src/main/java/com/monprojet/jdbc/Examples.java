@@ -3,7 +3,7 @@ package com.monprojet.jdbc;
 public class Examples {
 
 	void exp01() {
-		DataSource ds = new MySqlDataSource("Transportapp");
+		DataSource ds = new MySqlDataSource("Transportsapp");
 		Database db = new Database(ds);
 		String[][] data = db.Select("utilisateur");
 		print(data, 2);
